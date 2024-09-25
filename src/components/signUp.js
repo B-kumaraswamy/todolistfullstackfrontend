@@ -31,57 +31,32 @@ const SignUp = () => {
     }
   };
 
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="signup-container">
       <form onSubmit={handleSubmit} className="signup-form">
         <label>
           Username:
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
+          <input type="text" name="username" value={formData.username} onChange={handleChange} required />
         </label>
         <label>
           Email:
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
         </label>
         <label>
           Password:
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
         </label>
         <label>
           Phone Number:
-          <input
-            type="tel"
-            name="phoneNumber"
-            value={formData.phoneNumber}
-            onChange={handleChange}
-            required
-          />
+          <input type="tel" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
         </label>
         <label>
           Gender:
-          <select
-            name="gender"
-            value={formData.gender}
-            onChange={handleChange}
-            required
-          >
+          <select name="gender" value={formData.gender} onChange={handleChange} required>
             <option value="">Select</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -91,7 +66,7 @@ const SignUp = () => {
         <button type="submit">Sign Up</button>
       </form>
       <p className="login-link">
-        Already have an account? <a href="/login">Login</a>
+        Already have an account? <button onClick={handleLoginClick}>Login</button>
       </p>
     </div>
   );
