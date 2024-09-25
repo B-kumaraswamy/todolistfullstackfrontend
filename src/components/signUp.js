@@ -22,7 +22,7 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/users', formData);
+      const response = await axios.post('https://todolistfullstackbackend.onrender.com/users', formData);
       console.log('User registered:', response.data);
       navigate('/login'); // Redirect to login page
     } catch (error) {

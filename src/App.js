@@ -4,6 +4,7 @@ import Header from './components/header';
 import SignUp from './components/signUp';
 import Login from './components/login';
 import Home from './components/home';
+import Profile from './components/profile';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );

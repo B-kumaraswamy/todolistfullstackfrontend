@@ -14,7 +14,7 @@ const Home = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/tasks');
+      const response = await axios.get('https://todolistfullstackbackend.onrender.com/tasks');
       setTasks(response.data.tasks);
     } catch (error) {
       console.error('Error fetching tasks:', error);
@@ -25,7 +25,7 @@ const Home = () => {
     if (taskName.trim() === '') return;
 
     try {
-      await axios.post('http://localhost:8080/tasks', {
+      await axios.post('https://todolistfullstackbackend.onrender.com/tasks', {
         name: taskName,
         status: 'open',
       });
@@ -43,7 +43,7 @@ const Home = () => {
 
   const handleSaveTask = async (taskId, status) => {
     try {
-      await axios.put(`http://localhost:8080/tasks/${taskId}`, {
+      await axios.put(`https://todolistfullstackbackend.onrender.com/tasks/${taskId}`, {
         name: editingTaskName,
         status,
       });
@@ -56,7 +56,7 @@ const Home = () => {
 
   const handleDeleteTask = async (taskId) => {
     try {
-      await axios.delete(`http://localhost:8080/tasks/${taskId}`);
+      await axios.delete(`https://todolistfullstackbackend.onrender.com/tasks/${taskId}`);
       fetchTasks();
     } catch (error) {
       console.error('Error deleting task:', error);
