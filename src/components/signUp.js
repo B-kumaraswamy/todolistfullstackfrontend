@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import './signUp.css';
 
 const SignUp = () => {
@@ -11,6 +12,8 @@ const SignUp = () => {
     gender: '',
   });
 
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -21,7 +24,7 @@ const SignUp = () => {
     try {
       const response = await axios.post('http://localhost:8080/users', formData);
       console.log('User registered:', response.data);
-      // Handle success (e.g., redirect to another page)
+      navigate('/login'); // Redirect to login page
     } catch (error) {
       console.error('There was an error registering the user:', error);
       // Handle error (e.g., display error message)
